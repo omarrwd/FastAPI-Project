@@ -5,9 +5,17 @@ This is a simple Task Manager application built with FastAPI and MongoDB. It all
 # Features
 
 Create new tasks with a title, description, and file name
+<br>
+
 View a list of all tasks
+<br>
+
 Update task details (title, description, file name)
+<br>
+
 Delete tasks
+<br>
+
 Store tasks in a MongoDB database
 
 # Prerequisites
