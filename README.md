@@ -26,11 +26,10 @@ Python
 <br>
 
 # Installation
-
-# Clone the repository:
-git clone [https://github.com/your-username/task-manager.git](https://github.com/omarrwd/FastAPI-Project.git)
-# Navigate to the project directory:
-cd task-manager
+Clone or Download the repository 
+<br>
+Navigate to the project directory
+<br>
 # Create a virtual environment (optional but recommended):
 python -m venv venv
 # Activate the virtual environment:
