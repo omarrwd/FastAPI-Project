@@ -35,6 +35,7 @@ python -m venv venv
 # Activate the virtual environment:
 For Windows:
 venv\Scripts\activate
+<br>
 For Unix/Linux:
 source venv/bin/activate
 # Install the dependencies:
@@ -45,6 +46,8 @@ replacing your-connection-string from MongoDB Cloud with your actual MongoDB con
 
 Start the FastAPI server:
 uvicorn main:app --reload
+<br>
 Open your web browser and visit http://localhost:8000 to access the Task Manager application.
+<br>
 Use the provided interface to create, view, update, and delete tasks.
 
