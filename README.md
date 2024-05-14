@@ -24,7 +24,6 @@ Before running the application, ensure you have the following installed:
 
 Python
 <br>
-MongoDB
 
 # Installation
 
@@ -42,7 +41,7 @@ source venv/bin/activate
 # Install the dependencies:
 pip install -r requirements.txt
 # Set up the MongoDB connection:
-replacing your-connection-string with your actual MongoDB connection string in this line MongoClient("mongodb+srv://<username>:<password>@<cluster-url>/<database>?retryWrites=true&w=majority")
+replacing your-connection-string from MongoDB Cloud with your actual MongoDB connection string in this line "MongoClient("mongodb+srv://<username>:<password>@<cluster-url>/<database>?retryWrites=true&w=majority")"
 # Usage
 
 Start the FastAPI server:
