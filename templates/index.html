@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task Manager</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <h1>Task Manager</h1>
+  <div>
+    <h2>Create Task</h2>
+    <input type="text" id="title" placeholder="Title">
+    <input type="text" id="description" placeholder="Description">
+    <input type="text" id="file_name" placeholder="File Name">
+    <button onclick="createTask()">Create</button>
+  </div>
+  <div>
+    <h2>Tasks</h2>
+    <ul id="taskList"></ul>
+  </div>
+  <script>
+    function createTask() {
+      const title = document.getElementById("title").value;
+      const description = document.getElementById("description").value;
+      const file_name = document.getElementById("file_name").value;
+      axios.post("/tasks", { title, description, file_name })
+        .then(response => {
+          getTasks();
+        });
+    }
+
+    function updateTask(taskId) {
+      const updatedTitle = prompt("Enter the updated title:");
+      const updatedDescription = prompt("Enter the updated description:");
+      const updatedFileName = prompt("Enter the updated file name:");
+      axios.put(`/tasks/${taskId}`, { title: updatedTitle, description: updatedDescription, file_name: updatedFileName })
+        .then(response => {
+          getTasks();
+        });
+    }
+
+    function deleteTask(taskId) {
+      axios.delete(`/tasks/${taskId}`)
+        .then(response => {
+          getTasks();
+        });
+    }
+
+    function getTasks() {
+      axios.get("/tasks")
+        .then(response => {
+          const tasks = response.data;
+          const taskList = document.getElementById("taskList");
+          taskList.innerHTML = "";
+          tasks.forEach(task => {
+            const listItem = document.createElement("li");
+            listItem.innerHTML = `
+              ${task.title} - ${task.description} - ${task.file_name}
+              <button onclick="updateTask('${task._id}')">Update</button>
+              <button onclick="deleteTask('${task._id}')">Delete</button>
+            `;
+            taskList.appendChild(listItem);
+          });
+        });
+    }
+
+    getTasks();
+  </script>
+</body>
+</html>

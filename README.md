@@ -1,2 +1,2 @@
-# FastAPI-Project
- Simple Project for CRUD using FastAPI and Mongo
+# FastAPI Project
+ Simple Project For Crud Using FastAPI and Mongo DB
